@@ -15,7 +15,11 @@ public class Main {
                 CustomerMenu customerMenu = new CustomerMenu();
                 Customer customer = customerMenu.inputCustomerSignUpData();
                 CustomerController customerController = new CustomerController();
-                customerController.handleSignUp(customer);
+                 Customer newCustomer = customerController.handleSignUp(customer);
+                System.out.println("you have succesfully register : ");
+                break;
+
+
         }
     }
 }
