@@ -9,7 +9,7 @@ public class CustomerService {
         CustomerRepository customerRepository =  new CustomerRepository();
         return customerRepository.addNewCustomer(customer);
     }
-    public  void displayCustomerdetails(Customer customer){
+    public  void displayCustomerDetails(Customer customer){
         System.out.println("id : "+ customer.getId());
         System.out.println("firstname : " + customer.getFirstName());
         System.out.println("lastname : " + customer.getLastName());
