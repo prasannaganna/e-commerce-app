@@ -4,9 +4,13 @@ import com.stschool.ecommerce.model.Customer;
 import com.stschool.ecommerce.repository.CustomerRepository;
 
 public class CustomerService {
+    public CustomerRepository customerRepository;
+
+    public CustomerService(){
+        customerRepository = new CustomerRepository();
+    }
     public Customer handleSignUp(Customer customer){
         System.out.println("customer service: " +customer);
-        CustomerRepository customerRepository =  new CustomerRepository();
         return customerRepository.addNewCustomer(customer);
     }
     public  void displayCustomerDetails(Customer customer){
@@ -15,7 +19,15 @@ public class CustomerService {
         System.out.println("lastname : " + customer.getLastName());
         System.out.println("email : " + customer.getEmail());
         System.out.println("contact number : " +customer.getContactNumber());
+    }
+    public void displayAllCustomerDetails(Customer[] customers){
+        for(Customer customer : customers){
+            displayCustomerDetails(customer);
+        }
+    }
 
+    public Customer[] getAllCustomers(){
+        return customerRepository.getAllCustomers();
     }
 
 }
